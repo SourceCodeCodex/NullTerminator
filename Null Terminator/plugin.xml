@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Code improvement"
+            id="Null Terminator">
+      </category>
+      <view
+            name="Null Terminator"
+            icon="icons/sample.gif"
+            category="Null Terminator"
+            class="gui.NullTerminatorView"
+            id="gui.NullTerminatorView">
+      </view>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:gui.NullTerminatorView">
+         <control
+               class="handlers.ShowActiveProjectHandler">
+         </control>
+         <command
+               commandId="LoadSelectedProjectHandler_id"
+               icon="icons/loadSelectedProject.gif"
+               label="Load Selected Project"
+               style="push">
+         </command>
+         <command
+               commandId="LoadActiveProjectHandler_id"
+               icon="icons/loadActiveProject.gif"
+               label="Load Active Project"
+               style="push">
+         </command>
+         <command
+               commandId="UnloadProjectHandler_id"
+               icon="icons/unloadProject.gif"
+               label="Unload Project"
+               style="push">
+         </command>
+         <command
+               commandId="ClearInfoArea_id"
+               icon="icons/clearTextArea.gif"
+               label="Clear Info Area"
+               style="push">
+         </command>
+      </menuContribution>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="handlers.LoadSelectedProjectHandler"
+            id="LoadSelectedProjectHandler_id"
+            name="Load Selected Project">
+      </command>
+      <command
+            defaultHandler="handlers.LoadActiveProjectHandler"
+            id="LoadActiveProjectHandler_id"
+            name="Load Active Project">
+      </command>
+      <command
+            defaultHandler="handlers.UnloadProjectHandler"
+            id="UnloadProjectHandler_id"
+            name="Unload Project">
+      </command>
+      <command
+            defaultHandler="handlers.ClearInfoAreaHandler"
+            id="ClearInfoArea_id"
+            name="Clear Info Area">
+      </command>
+   </extension>
+ 
+   </plugin>
